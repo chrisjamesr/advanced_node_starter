@@ -1,4 +1,5 @@
-const connectionString = `mongodb+srv://chrisjames:TScvwZDqg7MlCGXe@cluster0-twxcl.mongodb.net/test?retryWrites=true&w=majority`
+// const connectionString = `mongodb+srv://chrisjames:TScvwZDqg7MlCGXe@cluster0-twxcl.mongodb.net/test?retryWrites=true&w=majority`
+const connectionString = `mongodb://chris:4l3xk4l1@ds141815.mlab.com:41815/blog_dev`
 
 module.exports = {
   googleClientID:
