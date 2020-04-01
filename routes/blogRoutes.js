@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
 
+const redis = require('redis');
+const redisUrl = 'redis://127.0.0.1:6379'
+const client = redis.createClient(redisUrl);
+
+
 const Blog = mongoose.model('Blog');
 
 module.exports = app => {
