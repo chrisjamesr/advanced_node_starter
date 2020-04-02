@@ -19,9 +19,7 @@ module.exports = app => {
     const client = redis.createClient(redisUrl);
     const util = require('util');
 
-    // Checks for Cached Data
-    //overwrite existing function on client.get 
-    // returns a new function that returns a promise
+  // 
     client.get = util.promisify(client.get);
     const cachedBlogs = await client.get(req.user.id); 
     
