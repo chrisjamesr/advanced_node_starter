@@ -3,7 +3,7 @@ const redis = require('redis');
 const util = require('util');
 
 const redisUrl = 'redis://127.0.0.1:6379';
-client = redis.createClient(redisUrl);
+const client = redis.createClient(redisUrl);
 client.hget = util.promisify(client.hget);
 
 
@@ -24,7 +24,7 @@ mongoose.Query.prototype.exec = async function(){
         collection: this.mongooseCollection.name
     }));
 
-    const cacheValue = await client.hget(this.hashKey);
+    const cacheValue = await client.hget(this.hashKey, key);
 
     if (cacheValue){
         console.log('cached!')
