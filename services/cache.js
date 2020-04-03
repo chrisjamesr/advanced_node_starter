@@ -27,14 +27,11 @@ mongoose.Query.prototype.exec = async function(){
     const cacheValue = await client.hget(this.hashKey, key);
 
     if (cacheValue){
-        console.log('cached!')
-        // const doc = new this.model(JSON.parse(cacheValue));
         const doc = JSON.parse(cacheValue);
         return Array.isArray(doc) 
         ? doc.map(d => new this.model(d))
         : new this.model(doc);
     }
-    console.log('no cache')
     const result = await exec.apply(this, arguments);
     
     client.hset(this.hashKey, key, JSON.stringify(result), 'EX', 10);
