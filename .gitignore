@@ -3,3 +3,4 @@ nohup.out
 .DS_Store
 redis_repl.js
 flush_redis.js
+.env
