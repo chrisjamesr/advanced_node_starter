@@ -28,9 +28,7 @@ test('clicking login link kicks off OAuth flow', async () => {
 
 test('When signed in, shows logout button', async() => {
     const id = '5e94cf62996ae4049a7e7c53';
-
     const Buffer = require('safe-buffer').Buffer;
-
     const sessionObject = {
         passport: {
             user: id
@@ -52,5 +50,4 @@ test('When signed in, shows logout button', async() => {
     const text = await page.$eval('a[href="/auth/logout"]', el => el.innerHTML);
     
     expect(text).toEqual('Logout');
-
 });
