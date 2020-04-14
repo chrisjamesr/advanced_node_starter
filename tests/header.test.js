@@ -1,19 +1,18 @@
-const puppeteer = require('puppeteer'); 
+const puppeteer = require('puppeteer');
 const sessionFactory = require('./factories/sessionFactory');
 const userFactory = require('./factories/userFactory');
+const Page = require('./helpers/page');
 
-let page, browser;
+let page;
+
 
 beforeEach( async ()=> {
-    browser = await puppeteer.launch({
-        headless: false, 
-    });
-    page = await browser.newPage();
+    page = await Page.build();
     await page.goto('localhost:3000');
 },15000);
 
 afterEach( async () => {
-    await browser.close() 
+    await page.close() 
 });
 
 test('the header has the correct text', async () => {
