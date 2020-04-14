@@ -29,7 +29,7 @@ test('clicking login link kicks off OAuth flow', async () => {
     expect(url).toMatch(/github\.com\/login\?/);
 });    
 
-test('When signed in, shows logout button', async() => {
+test.only('When signed in, shows logout button', async() => {
     const user = await userFactory();        
     const {session, sig} = sessionFactory(user);
     await page.setCookie({ name: 'session', value: session });
