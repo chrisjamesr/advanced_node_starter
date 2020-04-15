@@ -60,6 +60,29 @@ describe('When logged in', async () => {
             expect(titleError).toEqual('You must provide a value');
             expect(contentError).toEqual('You must provide a value');
         });
-    });
-    
-})
+    });    
+});
+
+describe('User is not logged in', async () => {
+
+    test('User cannot create new blog post', async () => {
+
+        const result = await page.evaluate(
+            () => {
+                return fetch('/api/blogs', {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        title: "XHR Test Title",
+                        content:"XHR Test Content"
+                    })
+                }).then( res => res.json()) ;
+            }
+        );
+        expect(result).toEqual({error: 'You must log in!'});
+   });
+
+});
