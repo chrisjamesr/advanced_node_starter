@@ -64,23 +64,26 @@ describe('When logged in', async () => {
 });
 
 describe('User is not logged in', async () => {
-
-    test('User cannot create new blog post', async () => {
-        const path = '/api/blogs';
-        const data = {
+    const actions = [
+        {
+            method: 'get',
+            path: '/api/blogs'
+        },
+        {
+            method: 'post',
+            path: '/api/blogs',
+            data: {
                 title: "XHR Test Title",
                 content:"XHR Test Content"
             }
+        }
+    ]
     
-        const result = await page.post(path, data);
-            
-        expect(result).toEqual({error: 'You must log in!'});
-   });
-   
-    test('User cannot receive index of blogs if not signed in', async ()=> {
-        const result = await page.get('/api/blogs')
+    test('blog related actions are prohibited.', async () => {
+        const results = await page.execRequests(actions);
         
-        expect(result).toEqual({error: 'You must log in!'});
-   });
-
+        for (let result of results){
+            expect(result).toEqual({ error: 'You must log in!'});
+        }
+    })
 });
