@@ -1,20 +1,26 @@
 language: node_js
 node_js:
-  - "13.11.0"
+- 13.11.0
 dist: trusty
 services:
-  - mongodb
-  - redis-server
+- mongodb
+- redis-server
 env:
+  matrix:
   - NODE_ENV=ci PORT=3000
+  global:
+  - secure: C5GbfdruMwlEAcqiq52tG/RZa/gQo69sgOHNh7bJXXdaF9OLijq0xO5Vv48w8qRqF1oy5uh1XwVY1Z6Ws6BXqHL3b8Szn2LE0t/BTJ5pqHFsw+T0uPVlrfhveOrnZ9+vw7iSaoWpFnqiBV7IVVxD7IALQxv//QDED6I5G6nUyUguv4VUjOIu/YXfjox/5/H6qE4IrSr+VajFyVNy6qtRTT8f8uhE+gYrYSagpREZ60GP6u/oi5Djq+lkF+hGovaTDrDtai/wfFgLdgGSvzbTLyf05K4ITaE/ZDNeQoiEAuOmCzH9cjmQX+J30F50X4qzIoYnepfP2wCarRdK3Xd+sIzqXx0SGO5NTpEhttRZFSb4IMQ5DIQ5yT6JhTNuMKbi1rocKgfNSUktusRoEH9nHa6Z9QTYpMbN7t2vj8yjVkhvNjPb7/WUkpjGvLK/xETg5ScFQ7LSMZ0W2CgvgtPz2FeS1hEhkuM4NgdKBXHeTxoVqDzzEJeTqYeVCAxVGmeJSqOxUYbHiADJs1I4v4GHVl/dH81iREhaeyzHiZrrwcs5BLTuQYyPHP/rL6H34fgm8qEfJ0whp1Is1h7qMSg0q+vSOabWvsfoY0/sh/ucKWFTiyhwgw43+AUXec3K7a8XhYQe3sasGiYvnTvwZHDCpX1JCI8/HTHJuohSGfAo67E=
+  - secure: oQysL7L8t409c6Fadslsx5y+cQpclPQVxe3bTO4Stzzfa6asIs7QTEkH/5rm83y4AIZ40ZnhVpdhhcZESmrYoi+P8AbOgL29ujUaOK2Colwv3kYKg9j853YNXawmwp3BkCKB6I0h5oP7zaOUXmCmWziHemP95D3CE5vE0VD5T/swBUhcChray3JsKEyJ837YqXly/93m1HsZqeyVcJZMu2hpaiKjOECklfwyAY/fa9CwpDqbFsY57SVHYzWGCfwf5mBO8nNiuDgCGWHwbLIl5tcwyYuV3LKuetriU9u5FFtdIq89BvUHsm0Z0t0ZFtTMXlLFs+uRwMLMp/I+9O1WDQQT0W4GQAcX42NUxjWg1JcUVP/fYAJwnk/aZ6Y6/4orj0Dq5NQdfx8E88kVHP9G9P+GSn900Was4PjghgX4Dmv+lsSdomuri5UPeNCinYztCgwXdWzTrC4BVuqoLBXs8E1XmVWUgNZhdQHdP0mzTmZM9p+qOAAy+kdvz2vBvWCHUsmwnW0nsYVbeE06EQvQ3b87xWzOKc2b2b4/ApvRkgAbAf1eVSL+QdorUS8oLlp8NtQQZMlvZr9V9E7+OwKhz8salQLCMWaCx/QI0J5qpIiGpkykxUwrTD7TwJoetUTIKGD2jpxV6jtu70+yffxvb47iPq8f6QU7QXPNJcOrAbY=
+  - secure: MDEcPpaf5ty9EM6ugVGBJDBcvwqeKfnFUUXqtjRb5qFFHLIWT495KBJ/rLH+WoPojCrpDdk0frqgjSJBMihC3T9JfyU5SJG1zJN426KMQm/g2I5rklNWtCQhK8veFjm/7CrgY4t1TjFIL7MgJ4PgpHToypXYUP1pMQz6PGTUnClPJ2+G1qtr9d6HkOYzr2DdiK3wuSvORQ5ChT+9zw+d/C3SWPxBib15iBl0bwDsw9tpVoCKc0HgFFK6jMuwMGhM+KS7FLavc3uxjF+xlO7BAG/vPS/xbaeexVWNLqA9DqzMXahvHqYh4GjJojdgnjQvb4WOdz8rsYcNlrEAq1r2Jywfd1rgXSzrGh6g3qwQmyuQQ/cTm7znJHzGIR59XxwHGUNvwysUhxoVTUJtVK8on1djWpWGi50Vr2tnIEJVFsLUGaqGymSqUSDxfS2HLMvEwEqEKpO8Y/6Tna9XXuDjCdsHg6kB9mFjTtxadt/EpcDzkIYgXDE8BvpLK7hu1LoffNK1wPZyjFvBZ1ldylH8X7FtEnHMBv25g0QpHC2MoaMANkR+k+mhIxi2HltlBEtwNnPDE8Edo8DF9XTaLIssrzgqx/S/CF1y7LwmEHKOoaPKxoKlHMB2SHI//UZIjSBNbK6DwlHYpYU1JrcqI6ki/Phr9GFiZLGBONDAuih1960=
+  - secure: P5Ofh+npMe6RBJfzIOC2sqNUpf77fyuMKVDUP8i1tiAE2XqZRvqRN2gW4c83NHQGPVUFkC9CZc4TiFW3dLEsuTbePh1mZvHhThiaxnZZ/W/Jpmc3b4rbpNc47/l9IWb2m/tkbBrgknIQLqiUNtoUQGX928JEdmKjMwe71onuzhXkrHQqw2rDQYI1Wbwu5+x+7okL4YwJEaTuSYRHmgfDMDUkFp1dGWWL56B5xk8p8qlczqj8smGnSgUwltGZjrWEAunIYnNDGh5hPacZJwSIV7t/HBQKmtPriB4CMMj+rZzuu5YdOH2DyNHGwVD0wByeIZu0Q+bQUvdHiCjHsv2Xs+4YGfARcTgMmUJf1wkgkSpKAqLzpMIst3KYpDxHCsaoKe8SHiTm3/f0SMr0WsPxs+XftSDNskJ6hUbote77VCiN22ElwGSNfjkYNrmkvWQMW6ys6EGOxQHp5a0gn7xvrrADRUHYuZjfrexES2wbB/qsK1wmoDXzXE4xNKN+polmUIjZc4P7Afg7MSaCJ6stysoKEFpl3BLcbFuMZDLfozdnecd52s23jVB9phmZtPl1buD1jMQ0n68ecmn/Qk7es1zs3n18J4EgvLGG9/sX87Q6m7xVAV5qEVwKGNVIwINySTgrUxsqMmi9LYGYJI7vZQNbgHcXIGDuz2HVSHh8u1s=
 cache:
   directories:
-    - node_modules
-    - client/node_modules
-install: 
-  - npm install
-  - npm run build
-script: 
-  - nohup npm run start & 
-  - sleep 3
-  - npm run test
+  - node_modules
+  - client/node_modules
+install:
+- npm install
+- npm run build
+script:
+- nohup npm run start &
+- sleep 3
+- npm run test
