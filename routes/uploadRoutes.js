@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+const uuid = require('uuid');
 const keys = require('../config/keys');
 
 const s3 = new AWS.S3({
@@ -8,6 +9,11 @@ const s3 = new AWS.S3({
 
 module.exports = app => {
     app.get('/api/upload', (req, res) => {
-        console.log('upload');
+
+        s3.getSignedUrl('putObject', {
+            Bucket: 'blog-test-bucket-00',
+            ContentType:'jpeg',
+            Key: '',
+        })
     });
 };
