@@ -4,3 +4,4 @@ nohup.out
 redis_repl.js
 flush_redis.js
 .env
+cors_config.md
